@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 12px;
+    scroll-behavior: smooth;
+    font-family: 'ubuntu', 'Open Sans', Geneva, Arial, sans-serif;
+    font-weight: 400;
+}
+
+
+#wrapper{
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    }
+
+
+
+/* for Aprojects page*/
+
+.project h1 {
+    font-weight: 400;
+    margin: 1;
+    line-height: 60px;
+}
+.project embed{
+                width: 80%;
+                height: 200px;
+                justify-content: center;
+                
+            }
+
+/* adobe complementary color pallet
+
+#F5B616
+
+#3E5DB5
+
+#1651F5
+
+#A18643
+
+#455275
+
+#4A45538
+
+*/
+
