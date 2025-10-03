@@ -9,6 +9,19 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
         <title>Andrew Chester's Portfolio</title>
+        <style>
+            #wrapper{
+                width: 960px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .project embed{
+                width: 80%;
+                height: 200px;
+                justify-content: center;
+                
+            }
+        </style>
     </head>
 
     <body>
@@ -24,6 +37,32 @@
                     </div>
                 </div>
             </header>
+
+        <div id="mainContent">
+            <article class="project">
+                <h1>Project 1: Breadth-First Search(BFS) and Depth-First Search (BFS) deployment in Python</h1>
+                <code><embed src="media/search.py"></code>
+
+            </article>
+            <br>
+            <article class="project">
+                <h1>Project 2: Link Tree</h1>
+                <p>Takes in a url then scans the page for all other urls it contains, then creates a visual graph to display the findings</p>
+                <code><embed src="media/beautifulsoup.py"></code>
+            </article>
+            <br>
+            <article class="project">
+                <h1>Project 3: Webcrawler</h1>
+                <p>Takes a url and searches the page for other urls, then uses a BFS search to continue scanning each website as far as desired</p>
+            </article>
+            <article class="project">
+                <h1>Project 4:</h1>
+            </article>
+
+            <article class="project">
+                <h1>Project 5: Home server</h1>
+            </article>
+        </div>
         </div>
 
         <div class="pageFooter">
