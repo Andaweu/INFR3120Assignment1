@@ -23,6 +23,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     align-items: center;
+    
     background-image: linear-gradient(180deg, white, #757bd8);
     min-height: 95vh;
     border-style: solid;
@@ -33,7 +34,7 @@ body {
 
 .headerContainer{
     align-items: center;
-    height: 49px;
+    height: 40px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 4px;
@@ -42,23 +43,20 @@ body {
 
 .navBar{
     margin:auto;
+    background-color: rgb(43, 43, 43);
+    height: 40px;
     
 }
-.navBar a#headerImage{
-    width: 40px;
-    height: 38px;
-    padding: 0;
-    margin: 0;
-}
+
 
 .navBar a{
-    color: black;
-    background-color: rgb(83, 83, 83);
+    color: rgb(218, 218, 218);
+    background-color: rgb(43, 43, 43);
     border-style: ridge;
-    border-color: white;
+    border-color: rgb(192, 192, 192);
     border-width: 2px;
-    height: 48px;
-    font-size: 20px;
+    height: 40px;
+    font-size: 32px;
 }
 
 .navBar a:hover{
@@ -68,6 +66,10 @@ body {
 }
 
 
+#mainContent{
+    text-align: center;
+}
+
 .pageFooter{
     background-color: #474970;
     min-height: 5vh;
@@ -76,6 +78,9 @@ body {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    border-style: ridge;
+    border-width: 2px;
+    border-color: black;
 }
 
 .pageFooter p{
@@ -93,6 +98,12 @@ body {
     line-height: 40px;
 }
 
+#mainPage h2{
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+}
+
 #mainPage p{
     font-size: 20px;
     text-align: center;
@@ -101,6 +112,20 @@ body {
     margin-right: 5%;
 }
 
+.exampleImage img{
+    text-align: center;
+    display: inline-block;
+    transform:translateX(50%);
+    margin: 30px 30px 10px 10px;
+    border-width: 1px;
+    border-style: solid;
+    
+
+}
+
+.aboutVideo {
+    transform: translateX(7.5%);
+}
 
 /* for Aprojects page*/
 
@@ -115,6 +140,43 @@ body {
                 margin: 0 auto;
                 
             }
+
+
+/* for AcontactMe.html */
+#contactForm h1{
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 16px;
+    font-size: 40px;
+}
+
+
+
+.formGroup {
+    display: flex;
+    align-items: center;
+
+    
+}
+
+label {
+    text-align: left;
+    margin-right: 10px;
+    width: 140px;
+}
+
+input {
+    width: 300px;
+    text-align: center;
+}
+
+.formGroup label, input, textarea{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    
+}
 
 /* adobe complementary color pallet
 
