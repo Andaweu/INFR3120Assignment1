@@ -14,14 +14,92 @@ html {
     font-weight: 400;
 }
 
+body {
+    background-image: linear-gradient(to bottom right, #9b1ff0, white );
+}
 
 #wrapper{
     width: 960px;
     margin-left: auto;
     margin-right: auto;
     align-items: center;
+    background-image: linear-gradient(180deg, white, #757bd8);
+    min-height: 95vh;
+    border-style: solid;
+    border-width: 2px;
+
     }
 
+
+.headerContainer{
+    align-items: center;
+    height: 49px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4px;
+    background-color: gray;
+}
+
+.navBar{
+    margin:auto;
+    
+}
+.navBar a#headerImage{
+    width: 40px;
+    height: 38px;
+    padding: 0;
+    margin: 0;
+}
+
+.navBar a{
+    color: black;
+    background-color: rgb(83, 83, 83);
+    border-style: ridge;
+    border-color: white;
+    border-width: 2px;
+    height: 48px;
+    font-size: 20px;
+}
+
+.navBar a:hover{
+    background-color: lightgray;
+    color: black;
+    border-color: black;
+}
+
+
+.pageFooter{
+    background-color: #474970;
+    min-height: 5vh;
+    width: 960px;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.pageFooter p{
+    color: rgb(182, 173, 173);
+    font-size: 16px;
+    text-align: center;
+}
+
+
+/* for Aabout me page*/
+
+#mainPage h1{
+    font-size: 30px;
+    text-align: center;
+    line-height: 40px;
+}
+
+#mainPage p{
+    font-size: 20px;
+    text-align: center;
+    line-height: 25px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
 
 
 /* for Aprojects page*/
@@ -31,10 +109,10 @@ html {
     margin: 1;
     line-height: 60px;
 }
-.project embed{
+.embedFormat embed{
                 width: 80%;
                 height: 200px;
-                justify-content: center;
+                margin: 0 auto;
                 
             }
 
