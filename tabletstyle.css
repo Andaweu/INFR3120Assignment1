@@ -1,0 +1,263 @@
+@charset "UTF-8";
+
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 12px;
+    scroll-behavior: smooth;
+    font-family: 'ubuntu', 'Open Sans', Geneva, Arial, sans-serif;
+    font-weight: 400;
+}
+
+body {
+    background-image: linear-gradient(to bottom right, #9b1ff0, white );
+}
+
+#wrapper{
+    width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    background-image: linear-gradient(180deg, white, #757bd8);
+    border-style: solid;
+    border-width: 2px;
+    min-height: 95vh;
+
+    }
+
+
+.headerContainer{
+    align-items: center;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: gray;
+}
+
+.navBar{
+    margin:auto;
+    background-color: rgb(43, 43, 43);
+    height: 30px;
+    
+}
+
+.navBar img{
+    transform: translateY(6px);
+}
+
+
+.navBar a{
+    color: rgb(218, 218, 218);
+    background-color: rgb(43, 43, 43);
+    border-style: ridge;
+    border-color: rgb(192, 192, 192);
+    border-width: 1px;
+    font-size: 24px;
+}
+
+.navBar a:hover{
+    background-color: lightgray;
+    color: black;
+    border-color: black;
+}
+
+
+#mainContent{
+    text-align: center;
+}
+
+#mainContent h1{
+    margin-top: 40px;
+}
+
+
+
+.pageFooter{
+    background-color: #474970;
+    min-height: 5vh;
+    width: 960px;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-style: ridge;
+    border-width: 2px;
+    border-color: black;
+}
+
+.pageFooter p{
+    color: rgb(182, 173, 173);
+    font-size: 16px;
+    text-align: center;
+}
+
+
+/* for Aabout me page*/
+
+#mainPage{
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+#mainPage h1{
+    font-size: 30px;
+    text-align: center;
+    line-height: 40px;
+}
+
+#mainPage h2{
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#mainPage p{
+    font-size: 20px;
+    text-align: center;
+    line-height: 25px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 40px;
+}
+
+.exampleImage img{
+    text-align: center;
+    display: inline-block;
+    transform:translateX(17.5%);
+    margin: 4px 4px 4px 4px;
+    border-width: 1px;
+    border-style: solid;
+    height: 180px;
+    width: 200px;
+    
+
+}
+
+#videoButtons{
+    transform: translateX(6.5%);
+}
+
+#videoButtons button{
+    border-style: solid;
+    height: 40px;
+    width: 100px;
+}
+
+#aboutmeVideo {
+    margin-top: 0px;
+    transform: translate(7.5%, -10%);
+    width: 400px;
+    height: 390px;
+}
+
+/* for Aprojects page*/
+
+.project {
+    background-color: #ffffff;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-color: black;
+}
+
+.project h1 {
+    font-weight: 400;
+    margin: 1;
+    line-height: 60px;
+}
+
+.project p{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 10px;
+}
+
+.project img{
+    margin-bottom: 20px;
+    width: 280px;
+    height: 180px;
+
+}
+.embedFormat embed{
+                width: 80%;
+                height: 200px;
+                margin: 0 auto;
+                
+            }
+
+.pythoncode{
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+    height: 300px;
+    overflow: auto;
+    font-size: 14px;
+}
+
+
+/* for AcontactMe.html */
+#contactForm h1{
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 16px;
+    font-size: 40px;
+}
+
+
+
+.formGroup {
+    display: flex;
+    align-items: center;
+
+    
+}
+
+label {
+    text-align: left;
+    margin-right: 10px;
+    width: 140px;
+}
+
+input {
+    width: 240px;
+    text-align: center;
+}
+
+.formGroup textarea{
+    width: 300px;
+    height: 200px;
+}
+
+.formGroup label, input, textarea{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    padding: 2px 2px 2px 2px;
+    
+}
+
+/* adobe complementary color pallet
+
+#F5B616
+
+#3E5DB5
+
+#1651F5
+
+#A18643
+
+#455275
+
+#4A45538
+
+*/
+

@@ -3,7 +3,9 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <link type="text/css" rel="stylesheet" href="assignment1style.css">
+        <link type="text/css" rel="stylesheet" href="assignment1style.css" media="only screen and (min-width:960px)">
+        <link type="text/css" rel="stylesheet" href="tabletstyle.css" media="only screen and (min-width:481px) and (max-width:959px)">
+        <link type="text/css" rel="stylesheet" href="mobilestyle.css" media="only screen and (max-width:480px)">
         <!--Ubuntu font from fonts.google.com-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,17 +39,17 @@
 
                     <div class="formGroup">
                         <label for="name">Name:</label>
-                        <input type="text" name="name" placeholder="Full Name" size="48" required>
+                        <input type="text" name="name" placeholder="Full Name" required>
                     </div>
 
                     <div class="formGroup">
                         <label for="email">Email:</label>
-                        <input type="email" name="email" placeholder="Email Address" size="48" required>
+                        <input type="email" name="email" placeholder="Email Address" required>
                     </div>
 
                     <div class="formGroup">
                         <label for="phone-number">Cellphone Number:</label>
-                        <input type="tel" name="phone-number" patterm="[0-9]{10}" placeholder="Cellphone Number" size="48">
+                        <input type="tel" name="phone-number" patterm="[0-9]{10}" placeholder="Cellphone Number">
                     </div>
 
                     <div class="formGroup">

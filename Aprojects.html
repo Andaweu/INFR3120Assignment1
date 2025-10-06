@@ -3,7 +3,10 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <link type="text/css" rel="stylesheet" href="assignment1style.css">
+        
+        <link type="text/css" rel="stylesheet" href="assignment1style.css" media="only screen and (min-width:960px)">
+        <link type="text/css" rel="stylesheet" href="tabletstyle.css" media="only screen and (min-width:481px) and (max-width:959px)">
+        <link type="text/css" rel="stylesheet" href="mobilestyle.css" media="only screen and (max-width:480px)">
         <!--Ubuntu font from fonts.google.com-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,8 +28,9 @@
         <div id="wrapper">
             <header id="pageHeader">
                 <div class="headerContainer">
+                    <a><img src="media/Face_Picture.jpg" id="headerImage" width="40" height="40"></a>
                     <div class="navBar">
-                        <img src="media/Face_Picture.jpg" id="headerImage" width="40" height="40">
+                        
                         <a href="index.html">Home</a>
                         <a href="AaboutMe.html">About Me</a>
                         <a href="Aprojects.html">Projects</a>
@@ -37,7 +41,8 @@
 
         <div id="mainContent">
             <article class="project">
-                <h1>Project 1: Breadth-First Search(BFS) and Depth-First Search (BFS) deployment in Python</h1>
+                <h1>Project 1: Breadth-First Search(BFS) and Depth-First Search (DFS) deployment in Python</h1>
+                <p>Runs the BFS and DFS algorithms using the stack and queue methods. BFS searches by checking each edge node then searching each of those nodes in a stack. DFS searches by checking the a nodes edges then searching the first edge for its edges until it has reached the bottom.</p>
                 <div class ="embedFormat">
                 <embed src="media/search.py">
                     </div>
@@ -46,21 +51,27 @@
             <br>
             <article class="project">
                 <h1>Project 2: Link Tree</h1>
-                <p>Takes in a url then scans the page for all other urls it contains, then creates a visual graph to display the findings</p>
+                <p>Takes in a url then scans the page for all other urls it contains, then creates a visual graph to display the findings. This code uses the BFS algorithm to find all the edge nodes from the desired page.</p>
                 <embed src="media/beautifulsoup.py">
             </article>
             <br>
             <article class="project">
                 <h1>Project 3: Webcrawler</h1>
-                <p>Takes a url and searches the page for other urls, then uses a BFS search to continue scanning each website as far as desired</p>
+                <p>Takes a url and searches the page for other urls, then uses a BFS search to continue scanning each website as far as desired. Creates a save point every 500 pages and creates a graph at the end to visualize the findings.</p>
+                <div class ="embedFormat">
+                <embed src="media/crawling.py">   
+                
             </article>
+            <br>
             <article class="project">
-                <h1>Project 4:</h1>
+                <h1>Project 4: Home Servers</h1>
+                <a><img src="media/server1.jpg"></a>
+                <a><img src="media/server2.jpg"></a>
+                <p>The first server uses an i7-9700k, 32gb of DDR4 ram, 3x2TB hard drives and 4x500gb hard drives. The second server uses a Ryzen 5 3600, 32gb of DDR4 ram and 4x4TB hard drives
+                    Both servers run TrueNas which is a debian based OS. They run an SMB share for storage, a Tailscale VPN and portainer to run docker containers, primarily game servers.
+                </p>
             </article>
-
-            <article class="project">
-                <h1>Project 5: Home server</h1>
-            </article>
+            <br><br><br>
         </div>
         </div>
 

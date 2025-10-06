@@ -3,7 +3,9 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <link type="text/css" rel="stylesheet" href="assignment1style.css">
+        <link type="text/css" rel="stylesheet" href="assignment1style.css" media="only screen and (min-width:960px)">
+        <link type="text/css" rel="stylesheet" href="tabletstyle.css" media="only screen and (min-width:481px) and (max-width:959px)">
+        <link type="text/css" rel="stylesheet" href="mobilestyle.css" media="only screen and (max-width:480px)">
         <!--Ubuntu font from fonts.google.com-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,8 +17,9 @@
         <div id="wrapper">
             <header id="pageHeader">
                 <div class="headerContainer">
+                    <img src="media/Face_Picture.jpg" id="headerImage" width="40" height="40">
                     <div class="navBar">
-                        <a><img src="media/Face_Picture.jpg" id="headerImage" width="40" height="40"></a>
+                        
                         <a href="index.html">Home</a>
                         <a href="AaboutMe.html">About Me</a>
                         <a href="Aprojects.html">Projects</a>
@@ -26,17 +29,22 @@
             </header>
 
             <div id="mainPage">
+                <br>
                 <h1>About me</h1>
                 <article>
                 <p>Hey there! My name is Andrew Chester and I am currently a student here at Ontario Tech University. I am studying Technical Management in the faculty of Business and IT. I grew up in Markham, Ontario and attended St. Roberts Catholic Highschool.
                     <br>
+                    <br>
                     I primarily do my developing in the Python coding language however, I also have experience with C++, Java, Docker and Bash Scripting.
                     <br>
-                    While I do jump around with my hobbies I am very into building computers and homelabbing. I currently run 2 main servers for myself and my family. I have also built my own PC (specs listed below) that I use daily for classes, work and hobbies.
+                    <br>
+                    While I do jump around with my hobbies I am very into building computers and homelabbing. I currently run 2 main servers for myself and my family. I have also built my own PC that I use daily for classes, work and hobbies.
+                    <br>
                     <br>
                     I am also quite into gaming. I am currently finishing Final Fantasy VII remake on PS5. Helldivers 2 is also a personal favorite of mine right now, playing it on PC.
                     <br>
                     Clash of Clans is my most played game right now and I am currently standing in the top 2000 in Canada.
+                    <br>
                     <br>
                     During my freetime should the weather permit I enjoy going out and taking photographs. Below I have left some of my photos I have taken over the past few years.
                     <br>
@@ -49,18 +57,40 @@
                 </article>
                 <article class="exampleImage">
                     <h2>Some photos I have taken on my travels</h1>
-                    <a><img src="media/image1.JPG"  width="300" height="200"></a>
-                    <a><img src="media/image2.JPG"  width="300" height="200"></a>
+                    <a><img src="media/image1.JPG" ></a>
+                    <a><img src="media/image2.JPG"></a>
                     <br>
-                    <a><img src="media/image3.JPG"  width="300" height="200"></a>
-                    <a><img src="media/image4.JPG"  width="300" height="200"></a>
+                    <a><img src="media/image3.JPG"></a>
+                    <a><img src="media/image4.JPG"></a>
                 </article>
                 <article class="aboutVideo">
-                    <video width="800" height="600" autoplay muted controls>
+                    <div id="videoButtons">
+                    <button class="controlButton" onclick="playVideo()">Play</button>
+                    <button class="controlButton" onclick="pauseVideo()">Pause</button>
+                    <button class="controlButton" onclick="restartVideo()">Restart</button>
+                    </div>
+                    <br>
+                    <video id="aboutmeVideo" poster="media/videoposter.JPG" autoplay muted controls>
                         <source src="media/webvideo.mp4" type="video/mp4">
                         <source src="media/webvideo.ogv" type="video/ogg">
                         Sorry your browser does not support the html video tag.
                     </video>
+                    
+                    <script>
+                        var videoContent=document.getElementById("aboutmeVideo")
+
+                        function playVideo(){
+                            videoContent.play();
+                        }
+
+                        function pauseVideo(){
+                            videoContent.pause();
+                        }
+
+                        function restartVideo(){
+                            videoContent.currentTime = 0;
+                        }
+                    </script>
                 </article>
             </div>
         </div>
