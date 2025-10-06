@@ -187,22 +187,22 @@ body {
 
 
 }
-.embedFormat embed{
-                width: 80%;
-                height: 200px;
-                margin: 0 auto;
-                
-            }
 
-.pythoncode{
+
+.pythonCode{
+    text-align: left;
     margin-left: auto;
     margin-right: auto;
-    width: 600px;
+    margin-bottom: 16px;
+    border-radius: 5px;
+    padding: 5px 5px 5px 5px;
+    width: 240px;
     height: 300px;
     overflow: auto;
     font-size: 14px;
+    background-color: black;
+    color: white;
 }
-
 
 /* for AcontactMe.html */
 #contactForm h1{
