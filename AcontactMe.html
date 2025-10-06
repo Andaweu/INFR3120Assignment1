@@ -21,7 +21,7 @@
         <div id="wrapper">
             <header id="pageHeader">
                 <div class="headerContainer">
-                    <a><img src="media/Face_Picture.jpg" id="headerImage" width="32" height="32"></a>
+                    <a><img src="media/Face_Picture.jpg" id="headerImage" width="32" height="32" alt="A picture of Andrew Chester"></a>
                     <div class="navBar">
                         
                         <a href="index.html">Home</a>
@@ -38,24 +38,24 @@
                 <form action="mailto:andrew.chester@ontariotechu.net" method="post" enctype="text/plain">
 
                     <div class="formGroup">
-                        <label for="name">Name:</label>
-                        <input type="text" name="name" placeholder="Full Name" required>
+                        <label for="fullName">Name:</label>
+                        <input id="fullName" type="text" name="name" placeholder="Full Name" required>
                     </div>
 
                     <div class="formGroup">
-                        <label for="email">Email:</label>
-                        <input type="email" name="email" placeholder="Email Address" required>
+                        <label for="email-address">Email:</label>
+                        <input id="email-address" type="email" name="email" placeholder="Email Address" required>
                     </div>
 
                     <div class="formGroup">
-                        <label for="phone-number">Cellphone Number:</label>
-                        <input type="tel" name="phone-number" patterm="[0-9]{10}" placeholder="Cellphone Number">
+                        <label for="cellphoneNumber">Cellphone Number:</label>
+                        <input id="cellphoneNumber" type="tel" name="phone-number" pattern="[0-9]{10}" placeholder="Cellphone Number">
                     </div>
 
                     <div class="formGroup">
-                        <label for="comments">Comments and Feedback:</label>
+                        <label for="commentArea">Comments and Feedback:</label>
                         <br>
-                        <textarea name="comments" cols="48" rows="10" required></textarea>
+                        <textarea id="commentArea" name="comments" cols="48" rows="10" required></textarea>
                     </div>
 
                     <div class="formGroup">
@@ -64,6 +64,7 @@
                     </div>
 
                 </form>
+        </div>
         </div>
         </div>
 

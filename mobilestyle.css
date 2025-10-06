@@ -92,7 +92,7 @@ body {
 }
 
 .pageFooter p{
-    color: rgb(182, 173, 173);
+    color: #9B1FF0;
     font-size: 16px;
     text-align: center;
 }
@@ -170,7 +170,6 @@ body {
 
 .project h1 {
     font-weight: 400;
-    margin: 1;
     line-height: 60px;
 }
 
@@ -233,7 +232,6 @@ input {
 }
 
 .formGroup label, input, textarea{
-    size: 30;
     margin-left: auto;
     margin-right: auto;
     margin-top: 16px;
