@@ -15,7 +15,7 @@ html {
 }
 
 body {
-    background-image: linear-gradient(to bottom right, #9b1ff0, white );
+    background-image: linear-gradient(to bottom right, #6B2FBA, white );
 }
 
 #wrapper{
@@ -23,7 +23,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     align-items: center;
-    background-image: linear-gradient(180deg, white, #757bd8);
+    background-image: linear-gradient(180deg, white, #A5A337);
     border-style: solid;
     border-width: 2px;
     min-height: 95vh;
