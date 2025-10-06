@@ -40,11 +40,106 @@
             </header>
 
         <div id="mainContent">
+            <!--Code was formatted using text-html.com-->
             <article class="project">
                 <h1>Project 1: Breadth-First Search(BFS) and Depth-First Search (DFS) deployment in Python</h1>
                 <p>Runs the BFS and DFS algorithms using the stack and queue methods. BFS searches by checking each edge node then searching each of those nodes in a stack. DFS searches by checking the a nodes edges then searching the first edge for its edges until it has reached the bottom.</p>
-                <div class ="embedFormat">
-                <embed src="media/search.py">
+                <div class ="pythonCode">
+                <code>
+                    
+                    <div>
+                    <div>from my_queue import Queue</div>
+                    <div>from my_stack import Stack</div>
+                    <div>import networkx as nx</div>
+                    <div>import matplotlib.pyplot as plt</div>
+                    <br />
+                    <div>def BFS(graph, root):</div>
+                    <div>&nbsp; &nbsp; """</div>
+                    <div>&nbsp; &nbsp; Performs a Breadth-First Search on a given graph</div>
+                    <div>&nbsp; &nbsp; to output a spanning subgraph of the original graph,</div>
+                    <div>&nbsp; &nbsp; and the sequence of nodes are visited.</div>
+                    <div>&nbsp; &nbsp; """</div>
+                    <div>&nbsp; &nbsp; #Your code here</div>
+                    <br /><br />
+                    <div>&nbsp; &nbsp; visitedNodes = set() #creates a set for visited nodes</div>
+                    <div>&nbsp; &nbsp; queue = Queue() #creates a queue from the class my_queue.py</div>
+                    <div>&nbsp; &nbsp; sequence = [] #list to store the sequence of the nodes</div>
+                    <div>&nbsp; &nbsp; spanningTree = nx.Graph()</div>
+                    <br />
+                    <div>&nbsp; &nbsp; queue.push(root) #sets the root node as the first value in queue</div>
+                    <div>&nbsp; &nbsp; visitedNodes.add(root) #adds the root node to visited node</div>
+                    <div>&nbsp; &nbsp; while not queue.is_empty(): #runs until the queue is empty</div>
+                    <div>&nbsp; &nbsp; &nbsp; &nbsp; pointer = queue.pop() #pops the first item in the queue and points to it</div>
+                    <div>&nbsp; &nbsp; &nbsp; &nbsp; sequence.append(pointer) #adds the pointed item to the sequence of visited nodes</div>
+                    <div>&nbsp; &nbsp; &nbsp; &nbsp;</div>
+                    <div>&nbsp; &nbsp; &nbsp; &nbsp; for i in graph.neighbors(pointer):</div>
+                    <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if i not in visitedNodes: #for a node not in previously visited node</div>
+                    <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; visitedNodes.add(i) #mark the node as visited</div>
+                    <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; queue.push(i) #pushes the current node to the queue</div>
+                    <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; spanningTree.add_edge(pointer, i) #adds an edge to the graph for the pointers location</div>
+                    <div>&nbsp; &nbsp; return spanningTree, sequence #returns the graph and the BFS sequence</div>
+                    <br /><br />
+                    <div>&nbsp; &nbsp;</div>
+                    <br /><br />
+                    <div>def DFS(graph, root):</div>
+                    <div>&nbsp; &nbsp; """</div>
+                    <div>&nbsp; &nbsp; Performs a Depth-First Search on a given graph starting</div>
+                    <div>&nbsp; &nbsp; from root node to output a spanning subgraph of the</div>
+                    <div>&nbsp; &nbsp; original graph, the sequence of visited nodes.</div>
+                    <div>&nbsp; &nbsp; """</div>
+                    <div>&nbsp; &nbsp; #Your code here</div>
+                    <br />
+                    <div>&nbsp; &nbsp; visitedNode = set() #creates a set for visited nodes</div>
+                    <div>&nbsp; &nbsp; stack = Stack() #creates a stack from the class my_stack.py</div>
+                    <div>&nbsp; &nbsp; sequence = [] #list to store the sequence of the nodes</div>
+                    <div>&nbsp; &nbsp; spanningTree = nx.Graph()</div>
+                    <br />
+                    <div>&nbsp; &nbsp; stack.push(root) #sets the root as the first value in the stack</div>
+                    <div>&nbsp; &nbsp; visitedNode.add(root) #marks the root as the first node visited</div>
+                    <div>&nbsp; &nbsp; while not stack.is_empty(): #runs while the stack is not empty</div>
+                    <div>&nbsp; &nbsp; &nbsp; &nbsp; pointer = stack.pop() #pops the last item in the stack and points to it</div>
+                    <div>&nbsp; &nbsp; &nbsp; &nbsp; sequence.append(pointer) #appends the pointer to the sequence of nodes</div>
+                    <br />
+                    <div>&nbsp; &nbsp; &nbsp; &nbsp; for i in reversed(list(graph.neighbors(pointer))): #because a stack is used (LIFO) the list is reversed</div>
+                    <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if i not in visitedNode: #if the node has not been visited yet</div>
+                    <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; visitedNode.add(i) #marks the current node as visited</div>
+                    <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; stack.push(i) #pushes the current node to the stack</div>
+                    <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; spanningTree.add_edge(pointer, i) #adds an edge to the graph for the current location</div>
+                    <div>&nbsp; &nbsp; return spanningTree, sequence #returns the graph and the DFS sequence</div>
+                    <br />
+                    <div>def show_graph(graph):</div>
+                    <div>&nbsp; &nbsp; plt.subplot(111)</div>
+                    <div>&nbsp; &nbsp; pos = nx.spring_layout(graph, seed=11)</div>
+                    <div>&nbsp; &nbsp; nx.draw(graph, with_labels=True, font_weight='bold', pos=pos)</div>
+                    <div>&nbsp; &nbsp; plt.show()</div>
+                    <br />
+                    <div>def create_tree():</div>
+                    <div>&nbsp; &nbsp; g = nx.Graph()</div>
+                    <div>&nbsp; &nbsp; for i in range(7):</div>
+                    <div>&nbsp; &nbsp; &nbsp; &nbsp; source = i if i != 3 else 0</div>
+                    <div>&nbsp; &nbsp; &nbsp; &nbsp; g.add_edge(source, i+1)</div>
+                    <div>&nbsp; &nbsp; return g</div>
+                    <br /><br />
+                    <div>graph = nx.erdos_renyi_graph(12, 0.25, seed=42)</div>
+                    <br />
+                    <div>show_graph(graph)</div>
+                    <div>BFSspan, BFSseq = BFS(graph, 0)</div>
+                    <div>DFSspan, DFSseq = DFS(graph, 0)</div>
+                    <br />
+                    <div>print ("BFS Seguence: ", BFSseq)</div>
+                    <div>print ("DFS Seguence: ", DFSseq)</div>
+                    <div>show_graph(graph)</div>
+                    <br />
+                    <div>graph = &nbsp;create_tree()</div>
+                    <div>show_graph(graph)</div>
+                    <div>BFSspan, BFSseq = BFS(graph, 0)</div>
+                    <div>DFSspan, DFSseq = DFS(graph, 0)</div>
+                    <br />
+                    <div>print ("BFS Seguence: ", BFSseq)</div>
+                    <div>print ("DFS Seguence: ", DFSseq)</div>
+                    <div>show_graph(graph)</div>
+                    <br /><br /><br /></div>
+                    </code>
                     </div>
 
             </article>
@@ -52,14 +147,128 @@
             <article class="project">
                 <h1>Project 2: Link Tree</h1>
                 <p>Takes in a url then scans the page for all other urls it contains, then creates a visual graph to display the findings. This code uses the BFS algorithm to find all the edge nodes from the desired page.</p>
-                <embed src="media/beautifulsoup.py">
+                <div class="pythonCode">
+                <code>
+                    <div>
+                        <div>from bs4 import BeautifulSoup</div>
+                        <div>import urllib3 as urllib</div>
+                        <div>import networkx as nx</div>
+                        <div>import matplotlib.pyplot as plt</div>
+                        <br />
+                        <div>def findUrls(root):</div>
+                        <div>&nbsp; &nbsp; #Your code here</div>
+                        <br />
+                        <div>&nbsp; &nbsp; http = urllib.PoolManager() #creates a PoolManager to handle requests</div>
+                        <div>&nbsp; &nbsp; graph = nx.Graph() #creates an nx graph</div>
+                        <div>&nbsp; &nbsp; graph.add_node(root) #uses the root (base url) as the root node of the star</div>
+                        <br />
+                        <div>&nbsp; &nbsp; try: #attempt to connect to the root url</div>
+                        <div>&nbsp; &nbsp; &nbsp; &nbsp; resp = http.request("GET", root) #sent a GET request to the root url</div>
+                        <div>&nbsp; &nbsp; &nbsp; &nbsp; soup = BeautifulSoup(resp.data, 'html.parser') #BeautifulSoup paraphrases the HTML content to search the url Tree</div>
+                        <br />
+                        <div>&nbsp; &nbsp; &nbsp; &nbsp; for link in soup.find_all('a', href=True): #Loops through all the HTML &lt;a&gt; tags with an href attribute</div>
+                        <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; url = link['href'] #takes the href attribute from the url</div>
+                        <br />
+                        <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if url.startswith('http'): #only looks for urls that start with http</div>
+                        <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; graph.add_node(url) #adds the url to the graph</div>
+                        <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; graph.add_edge(root, url) #adds an edge between the root and the found url nodes</div>
+                        <br />
+                        <div>&nbsp; &nbsp;</div>
+                        <div>&nbsp; &nbsp; except Exception as error: #creates an exception should the url not connect</div>
+                        <div>&nbsp; &nbsp; &nbsp; &nbsp; print(f"error fetching {root}: {error}")</div>
+                        <br /><br /><br />
+                        <div>&nbsp; &nbsp; return graph</div>
+                        <br /><br />
+                        <div>"""</div>
+                        <div>CODE TO TEST YOUR FUNCTIONS BEGINS HERE (DON'T MODIFY)</div>
+                        <div>"""</div>
+                        <br />
+                        <div>url = "http://google.ca"</div>
+                        <br /><br />
+                        <div>plt.figure(figsize=(12, 10))</div>
+                        <br /><br />
+                        <div>graph = findUrls(url)</div>
+                        <div>plt.subplot(111)</div>
+                        <div>nx.draw(graph, with_labels=True)</div>
+                        <div>plt.show()</div>
+                        <div>print('\n Graph Nodes = ', graph.nodes)</div>
+                        <div>print('\n Number of URLs = ', len(graph.nodes))</div>
+                        </div>
+                </code>
             </article>
             <br>
             <article class="project">
                 <h1>Project 3: Webcrawler</h1>
                 <p>Takes a url and searches the page for other urls, then uses a BFS search to continue scanning each website as far as desired. Creates a save point every 500 pages and creates a graph at the end to visualize the findings.</p>
-                <div class ="embedFormat">
-                <embed src="media/crawling.py">   
+                <div class="pythonCode">
+                    <code>
+                        <div>
+                            <div>import requests</div>
+                            <div>from bs4 import BeautifulSoup</div>
+                            <div>import networkx as nx</div>
+                            <div>from urllib.parse import urljoin</div>
+                            <div>from collections import deque</div>
+                            <div>import time</div>
+                            <div>import matplotlib.pyplot as plt</div>
+                            <div>def is_valid_link(link):</div>
+                            <div>&nbsp; &nbsp; if not link or 'http' not in link:</div>
+                            <div>&nbsp; &nbsp; &nbsp; &nbsp; return False</div>
+                            <div>&nbsp; &nbsp; invalid_suffixes = ['.jpg', '.jpeg', '.png', '.gif', '.pdf', '.svg', '.webp']</div>
+                            <div>&nbsp; &nbsp; return not any(link.lower().endswith(ext) for ext in invalid_suffixes)</div>
+                            <div>def create_tree():</div>
+                            <div>&nbsp; &nbsp; return nx.DiGraph() # or nx.Graph() if you want undirected</div>
+                            <div>def crawl(start_url, max_pages=100, save_interval=500, output_file='web_graph.gexf', link_limit=50):</div>
+                            <div>&nbsp; &nbsp; visited = set()</div>
+                            <div>&nbsp; &nbsp; graph = create_tree() # Use your graph creation function</div>
+                            <div>&nbsp; &nbsp; queue = deque([start_url])</div>
+                            <div>&nbsp; &nbsp; page_count = 0</div>
+                            <div>&nbsp; &nbsp; while queue and page_count &lt; max_pages:</div>
+                            <div>&nbsp; &nbsp; &nbsp; &nbsp; current_url = queue.popleft()</div>
+                            <div>&nbsp; &nbsp; &nbsp; &nbsp; if current_url in visited:</div>
+                            <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; continue</div>
+                            <div>&nbsp; &nbsp; &nbsp; &nbsp; print(f"Crawling: {current_url}")</div>
+                            <div>&nbsp; &nbsp; &nbsp; &nbsp; visited.add(current_url)</div>
+                            <div>&nbsp; &nbsp; &nbsp; &nbsp; try:</div>
+                            <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; response = requests.get(current_url, timeout=5)</div>
+                            <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if 'text/html' not in response.headers.get('Content-Type', ''):</div>
+                            <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; continue</div>
+                            <div>&nbsp; &nbsp; &nbsp; &nbsp; except requests.RequestException:</div>
+                            <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; continue</div>
+                            <div>&nbsp; &nbsp; &nbsp; &nbsp; soup = BeautifulSoup(response.text, 'html.parser')</div>
+                            <div>&nbsp; &nbsp; &nbsp; &nbsp; link_counter = 0</div>
+                            <div>&nbsp; &nbsp; &nbsp; &nbsp; for a_tag in soup.find_all('a', href=True):</div>
+                            <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if link_counter &gt;= link_limit:</div>
+                            <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break</div>
+                            <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; href = a_tag['href']</div>
+                            <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; full_url = urljoin(current_url, href)</div>
+                            <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if is_valid_link(full_url):</div>
+                            <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; graph.add_edge(current_url, full_url)</div>
+                            <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if full_url not in visited:</div>
+                            <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; queue.append(full_url)</div>
+                            <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; link_counter += 1</div>
+                            <div>&nbsp; &nbsp; &nbsp; &nbsp; page_count += 1</div>
+                            <div>&nbsp; &nbsp; &nbsp; &nbsp; if page_count % save_interval == 0:</div>
+                            <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; filename = f"{output_file.replace('.gexf', '')}_{page_count}.gexf"</div>
+                            <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nx.write_gexf(graph, filename)</div>
+                            <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; print(f"Saved graph with {page_count} pages to {filename}")</div>
+                            <div>&nbsp; &nbsp; nx.write_gexf(graph, output_file)</div>
+                            <div>&nbsp; &nbsp; print(f"Final graph saved to {output_file} with {page_count} pages.")</div>
+                            <br /><br /><br />
+                            <div>def show_graph(graph):</div>
+                            <div>&nbsp; &nbsp; plt.figure(figsize=(12, 8)) # Optional: Set figure size</div>
+                            <div>&nbsp; &nbsp; pos = nx.spring_layout(graph, seed=11) # Layout for consistent display</div>
+                            <div>&nbsp; &nbsp; nx.draw(graph, with_labels=True, font_weight='bold', pos=pos, node_size=500,node_color='skyblue', edge_color='gray')</div>
+                            <div>plt.title("Web Graph Visualization")</div>
+                            <div>plt.show()</div>
+                            <div># Example usage</div>
+                            <div>start_url = 'https://google.com'</div>
+                            <div>crawl(start_url)</div>
+                            <div>if __name__ == "__main__":</div>
+                            <div>&nbsp; &nbsp; g = create_tree()</div>
+                            <div>&nbsp; &nbsp; show_graph(g)</div>
+                            <div>&nbsp; &nbsp; nx.readwrite.gexf.read_gexf('web_graph.gexf')</div>
+                            </div>
+                    </code> 
                 
             </article>
             <br>
