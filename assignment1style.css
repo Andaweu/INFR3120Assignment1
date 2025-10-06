@@ -79,7 +79,7 @@ body {
 
 
 .pageFooter{
-    background-color: #F0DE1F;
+    background-color: #FAF500;
     min-height: 5vh;
     width: 960px;
     position: fixed;
@@ -92,7 +92,7 @@ body {
 }
 
 .pageFooter p{
-    color: #9B1FF0;
+    color: #583D7A;
     font-size: 16px;
     text-align: center;
 }
@@ -245,17 +245,17 @@ input {
 
 /* adobe complementary color pallet
 
-#F5B616
+#FAF500
 
-#3E5DB5
+#6B2FBA
 
-#1651F5
+#6C00FA
 
-#A18643
+#A5A337
 
-#455275
+#583D7A
 
-#4A45538
+#504F35
 
 */
 
