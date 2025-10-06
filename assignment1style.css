@@ -189,12 +189,7 @@ body {
     height: 200px;
 
 }
-.embedFormat embed{
-                width: 80%;
-                height: 200px;
-                margin: 0 auto;
-                
-            }
+
 
 .pythonCode{
     text-align: left;
